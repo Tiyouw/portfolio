@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Belajar HTML & CSS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <a href="#home" class="nav-logo">Portfolio</a>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- ===== HERO / HOME ===== -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="hero-greeting">Halo, nama saya</p>
+            <h1 class="hero-name">Nama Kamu</h1>
+            <h2 class="hero-role">Frontend Developer</h2>
+            <p class="hero-desc">
+                Siswa SMK yang suka bikin website. Belajar HTML, CSS, dan JavaScript
+                setiap hari.
+            </p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">Lihat Karya</a>
+                <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-avatar">
+                <span>📷</span>
+                <p>Ganti dengan foto kamu</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-avatar">
+                        <span>👤</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Siapa saya?</h3>
+                    <p>
+                        Saya adalah siswa SMK jurusan RPL (Rekayasa Perangkat Lunak).
+                        Saya suka belajar web development, terutama HTML, CSS, dan JavaScript.
+                    </p>
+                    <p>
+                        Tujuan saya adalah menjadi developer yang handal dan bisa
+                        bikin aplikasi yang bermanfaat untuk orang banyak.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>1+</h4>
+                            <p>Tahun Belajar</p>
+                        </div>
+                        <div class="stat">
+                            <h4>5+</h4>
+                            <p>Proyek Selesai</p>
+                        </div>
+                        <div class="stat">
+                            <h4>3+</h4>
+                            <p>Teknologi Dikuasai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <p class="section-subtitle">Teknologi yang saya pelajari</p>
+            <div class="skills-grid">
+                <!-- Skill Card 1 -->
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML</h3>
+                    <p>Struktur dan konten halaman web</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 90%"></div>
+                    </div>
+                    <span class="skill-level">90%</span>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Desain dan tampilan halaman web</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 80%"></div>
+                    </div>
+                    <span class="skill-level">80%</span>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>Interaktivitas dan logika web</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 70%"></div>
+                    </div>
+                    <span class="skill-level">70%</span>
+                </div>
+                <!-- Skill Card 4 -->
+                <div class="skill-card">
+                    <div class="skill-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>Tampilan untuk semua ukuran layar</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 75%"></div>
+                    </div>
+                    <span class="skill-level">75%</span>
+                </div>
+                <!-- Skill Card 5 -->
+                <div class="skill-card">
+                    <div class="skill-icon">🔧</div>
+                    <h3>Git & GitHub</h3>
+                    <p>Version control dan kolaborasi</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 65%"></div>
+                    </div>
+                    <span class="skill-level">65%</span>
+                </div>
+                <!-- Skill Card 6 -->
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Dasar pemrograman dan automasi</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 60%"></div>
+                    </div>
+                    <span class="skill-level">60%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-subtitle">Proyek-proyek yang pernah saya buat</p>
+            <div class="portfolio-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <span class="project-placeholder">🖥️</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Landing Page</h3>
+                        <p>Halaman utama untuk profil dengan desain modern dan responsive</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small">Live Demo</a>
+                            <a href="#" class="btn btn-small btn-ghost">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <span class="project-placeholder">📝</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>To-Do List App</h3>
+                        <p>Aplikasi daftar tugas sederhana dengan fitur tambah, hapus, dan centang</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small">Live Demo</a>
+                            <a href="#" class="btn btn-small btn-ghost">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <span class="project-placeholder">🎮</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Game Ular</h3>
+                        <p>Game ular klasik yang dimainkan di browser</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small">Live Demo</a>
+                            <a href="#" class="btn btn-small btn-ghost">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <p class="section-subtitle">Tertarik bekerja sama? Kirim pesan!</p>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Fitur form belum aktif. Ganti action URL form sesuai kebutuhan.')">
+                <div class="form-group">
+                    <input type="text" placeholder="Nama" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Pesan" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Kirim Pesan</button>
+            </form>
+            <div class="contact-links">
+                <a href="https://github.com/Tiyouw" target="_blank" class="contact-link">GitHub</a>
+                <a href="https://instagram.com/" target="_blank" class="contact-link">Instagram</a>
+                <a href="mailto:email@kamu.com" class="contact-link">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nama Kamu. Dibuat dengan ❤️ dan Vanilla HTML/CSS.</p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT (vanilla) ===== -->
+    <script>
+        // Toggle menu hamburger untuk mobile
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        });
+
+        // Tutup menu saat link diklik
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('show');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Aktifkan link navbar berdasarkan section yang terlihat
+        const sections = document.querySelectorAll('section');
+        const navLinksAll = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinksAll.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
