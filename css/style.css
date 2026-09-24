@@ -1,8 +1,26 @@
 /* =============================================
    PORTFOLIO - CSS VANILLA
-   Tema: Dark Modern
    Belajar: Selector, Flexbox, Grid, Media Query
    ============================================= */
+
+/* =========================================================
+   ✏️ PRAKTIK 3 — WARNA TEMA
+   Semua warna website dikumpulkan di sini.
+   Ganti kode warna (yang diawali #) dan seluruh web ikut berubah.
+   Contoh warna: #1a365d (biru tua), darkblue, #ff6b6b (merah),
+                 #ffd93d (kuning), #6bff8d (hijau), #b36bff (ungu)
+   ========================================================= */
+:root {
+    --warna-utama: #00d4ff;        /* warna aksen (tombol, judul kecil) */
+    --warna-utama-hover: #00b8e6;  /* warna aksen saat kursor di atasnya */
+    --warna-bg: #0a0a0a;           /* background halaman */
+    --warna-bg-alt: #0e0e0e;       /* background section selang-seling */
+    --warna-kartu: #111111;        /* background kartu */
+    --warna-garis: #1a1a1a;        /* garis pembatas */
+    --warna-judul: #ffffff;        /* warna judul */
+    --warna-teks: #e0e0e0;         /* warna tulisan utama */
+    --warna-teks-redup: #888888;   /* tulisan sekunder */
+}
 
 /* ===== RESET & BASE ===== */
 * {
@@ -15,10 +33,15 @@ html {
     scroll-behavior: smooth; /* Scroll halus saat klik link */
 }
 
+/* =========================================================
+   ✏️ PRAKTIK 4 — TIPOGRAFI
+   Ganti font-family di bawah untuk mengubah jenis huruf.
+   Contoh: 'Segoe UI', Arial, Helvetica, 'Times New Roman'
+   ========================================================= */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0a0a0a;
-    color: #e0e0e0;
+    background-color: var(--warna-bg);
+    color: var(--warna-teks);
     line-height: 1.6;
 }
 
@@ -29,7 +52,7 @@ body {
     padding: 0 20px;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== NAVBAR (header) ===== */
 .navbar {
     position: fixed;
     top: 0;
@@ -39,16 +62,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 16px 40px;
-    background: rgba(10, 10, 10, 0.9);
+    /* ✏️ PRAKTIK 3: warna latar navbar (angka 0.95 = tingkat transparansi) */
+    background-color: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px); /* Efek kaca buram */
     z-index: 1000;
-    border-bottom: 1px solid #1a1a1a;
+    border-bottom: 1px solid var(--warna-garis);
 }
 
 .nav-logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #00d4ff;
+    color: var(--warna-utama);
     text-decoration: none;
 }
 
@@ -59,7 +83,7 @@ body {
 }
 
 .nav-link {
-    color: #b0b0b0;
+    color: var(--warna-teks-redup);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s;
@@ -67,7 +91,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #00d4ff;
+    color: var(--warna-utama);
 }
 
 /* Hamburger menu (mobile) */
@@ -81,7 +105,7 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: #e0e0e0;
+    background: var(--warna-teks);
     border-radius: 2px;
     transition: 0.3s;
 }
@@ -115,28 +139,29 @@ body {
 }
 
 .hero-greeting {
-    color: #00d4ff;
+    color: var(--warna-utama);
     font-size: 1.1rem;
     margin-bottom: 8px;
 }
 
+/* ✏️ PRAKTIK 4: ukuran nama besar (font-size) */
 .hero-name {
     font-size: 3.5rem;
     font-weight: 800;
-    color: #ffffff;
+    color: var(--warna-judul);
     margin-bottom: 8px;
     line-height: 1.1;
 }
 
 .hero-role {
     font-size: 1.8rem;
-    color: #b0b0b0;
+    color: var(--warna-teks-redup);
     font-weight: 400;
     margin-bottom: 20px;
 }
 
 .hero-desc {
-    color: #888;
+    color: var(--warna-teks-redup);
     font-size: 1.05rem;
     max-width: 500px;
     margin-bottom: 32px;
@@ -148,33 +173,20 @@ body {
     flex-wrap: wrap;
 }
 
+/* ===== FOTO PROFIL ===== */
 .hero-image {
     flex-shrink: 0;
 }
 
-.hero-avatar,
-.about-avatar {
+/* Kotak foto profil — ubah width/height kalau mau lebih besar/kecil */
+.avatar-img {
     width: 280px;
     height: 280px;
+    object-fit: cover; /* biar foto tidak gepeng */
     border-radius: 20px;
-    background: #1a1a1a;
-    border: 2px solid #2a2a2a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #555;
-}
-
-.hero-avatar span,
-.about-avatar span {
-    font-size: 4rem;
-    margin-bottom: 8px;
-}
-
-.hero-avatar p,
-.about-avatar p {
-    font-size: 0.85rem;
+    border: 2px solid var(--warna-garis);
+    background: var(--warna-kartu);
+    display: block;
 }
 
 /* ===== BUTTONS ===== */
@@ -191,24 +203,24 @@ body {
 }
 
 .btn-primary {
-    background: #00d4ff;
+    background: var(--warna-utama);
     color: #0a0a0a;
 }
 
 .btn-primary:hover {
-    background: #00b8e6;
+    background: var(--warna-utama-hover);
     transform: translateY(-2px);
 }
 
 .btn-outline {
-    border: 2px solid #333;
-    color: #e0e0e0;
+    border: 2px solid var(--warna-garis);
+    color: var(--warna-teks);
     background: transparent;
 }
 
 .btn-outline:hover {
-    border-color: #00d4ff;
-    color: #00d4ff;
+    border-color: var(--warna-utama);
+    color: var(--warna-utama);
 }
 
 .btn-small {
@@ -218,13 +230,13 @@ body {
 
 .btn-ghost {
     background: transparent;
-    border: 1px solid #333;
-    color: #b0b0b0;
+    border: 1px solid var(--warna-garis);
+    color: var(--warna-teks-redup);
 }
 
 .btn-ghost:hover {
-    border-color: #00d4ff;
-    color: #00d4ff;
+    border-color: var(--warna-utama);
+    color: var(--warna-utama);
 }
 
 .btn-full {
@@ -240,64 +252,105 @@ section {
 .section-title {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--warna-judul);
     text-align: center;
     margin-bottom: 8px;
 }
 
 .section-subtitle {
     text-align: center;
-    color: #666;
+    color: var(--warna-teks-redup);
     margin-bottom: 50px;
     font-size: 1rem;
 }
 
 /* ===== ABOUT ===== */
 .about {
-    background: #0e0e0e;
+    background: var(--warna-bg-alt);
 }
 
 .about-content {
-    display: flex;
-    align-items: center;
-    gap: 60px;
     margin-top: 40px;
 }
 
-.about-image {
-    flex-shrink: 0;
-}
-
 .about-text {
-    flex: 1;
+    max-width: 820px;
+    margin: 0 auto;
 }
 
 .about-text h3 {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: var(--warna-judul);
     margin-bottom: 16px;
 }
 
 .about-text p {
-    color: #999;
+    color: var(--warna-teks-redup);
     margin-bottom: 16px;
 }
 
 .about-stats {
     display: flex;
+    justify-content: center;
     gap: 40px;
     margin-top: 32px;
 }
 
 .stat h4 {
     font-size: 2rem;
-    color: #00d4ff;
+    color: var(--warna-utama);
     margin-bottom: 4px;
 }
 
 .stat p {
-    color: #666;
+    color: var(--warna-teks-redup);
     font-size: 0.9rem;
+}
+
+/* ===== DAFTAR (PRAKTIK 2) ===== */
+.about-lists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.list-block {
+    background: var(--warna-kartu);
+    border: 1px solid var(--warna-garis);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.list-block h4 {
+    font-size: 1.1rem;
+    color: var(--warna-judul);
+    margin-bottom: 14px;
+}
+
+/* Tanda bulat di depan setiap item daftar */
+.list {
+    list-style: none;
+}
+
+.list li {
+    color: var(--warna-teks-redup);
+    font-size: 0.95rem;
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+/* Bulatan warna aksen sebelum tiap item */
+.list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--warna-utama);
 }
 
 /* ===== SKILLS ===== */
@@ -308,8 +361,8 @@ section {
 }
 
 .skill-card {
-    background: #111;
-    border: 1px solid #1a1a1a;
+    background: var(--warna-kartu);
+    border: 1px solid var(--warna-garis);
     border-radius: 12px;
     padding: 32px 24px;
     text-align: center;
@@ -318,7 +371,7 @@ section {
 
 .skill-card:hover {
     transform: translateY(-4px);
-    border-color: #00d4ff33;
+    border-color: var(--warna-utama);
 }
 
 .skill-icon {
@@ -327,13 +380,13 @@ section {
 }
 
 .skill-card h3 {
-    color: #ffffff;
+    color: var(--warna-judul);
     margin-bottom: 8px;
     font-size: 1.15rem;
 }
 
 .skill-card p {
-    color: #666;
+    color: var(--warna-teks-redup);
     font-size: 0.9rem;
     margin-bottom: 20px;
 }
@@ -342,7 +395,7 @@ section {
 .skill-bar {
     width: 100%;
     height: 6px;
-    background: #1a1a1a;
+    background: var(--warna-garis);
     border-radius: 3px;
     overflow: hidden;
     margin-bottom: 8px;
@@ -350,20 +403,20 @@ section {
 
 .skill-fill {
     height: 100%;
-    background: linear-gradient(90deg, #00d4ff, #0088cc);
+    background: linear-gradient(90deg, var(--warna-utama), var(--warna-utama-hover));
     border-radius: 3px;
     transition: width 1s ease;
 }
 
 .skill-level {
-    color: #00d4ff;
+    color: var(--warna-utama);
     font-size: 0.85rem;
     font-weight: 600;
 }
 
 /* ===== PORTFOLIO ===== */
 .portfolio {
-    background: #0e0e0e;
+    background: var(--warna-bg-alt);
 }
 
 .portfolio-grid {
@@ -373,8 +426,8 @@ section {
 }
 
 .project-card {
-    background: #111;
-    border: 1px solid #1a1a1a;
+    background: var(--warna-kartu);
+    border: 1px solid var(--warna-garis);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s, border-color 0.3s;
@@ -382,12 +435,12 @@ section {
 
 .project-card:hover {
     transform: translateY(-4px);
-    border-color: #00d4ff33;
+    border-color: var(--warna-utama);
 }
 
 .project-image {
     height: 180px;
-    background: #161616;
+    background: var(--warna-garis);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -402,13 +455,13 @@ section {
 }
 
 .project-info h3 {
-    color: #ffffff;
+    color: var(--warna-judul);
     margin-bottom: 8px;
     font-size: 1.2rem;
 }
 
 .project-info p {
-    color: #777;
+    color: var(--warna-teks-redup);
     font-size: 0.9rem;
     margin-bottom: 16px;
 }
@@ -422,11 +475,11 @@ section {
 
 .tag {
     padding: 4px 12px;
-    background: #1a1a1a;
-    color: #00d4ff;
+    background: var(--warna-garis);
+    color: var(--warna-utama);
     border-radius: 20px;
     font-size: 0.8rem;
-    border: 1px solid #00d4ff22;
+    border: 1px solid var(--warna-garis);
 }
 
 .project-links {
@@ -448,10 +501,10 @@ section {
 .form-group textarea {
     width: 100%;
     padding: 14px 18px;
-    background: #111;
-    border: 1px solid #222;
+    background: var(--warna-kartu);
+    border: 1px solid var(--warna-garis);
     border-radius: 8px;
-    color: #e0e0e0;
+    color: var(--warna-teks);
     font-size: 1rem;
     font-family: inherit;
     outline: none;
@@ -460,7 +513,7 @@ section {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #00d4ff;
+    border-color: var(--warna-utama);
 }
 
 .form-group textarea {
@@ -474,23 +527,23 @@ section {
 }
 
 .contact-link {
-    color: #666;
+    color: var(--warna-teks-redup);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s;
 }
 
 .contact-link:hover {
-    color: #00d4ff;
+    color: var(--warna-utama);
 }
 
 /* ===== FOOTER ===== */
 .footer {
     padding: 24px 0;
     text-align: center;
-    color: #444;
+    color: var(--warna-teks-redup);
     font-size: 0.9rem;
-    border-top: 1px solid #1a1a1a;
+    border-top: 1px solid var(--warna-garis);
 }
 
 /* ===== RESPONSIVE (Mobile) ===== */
@@ -505,12 +558,12 @@ section {
         top: 60px;
         left: 0;
         width: 100%;
-        background: #0a0a0a;
+        background: var(--warna-bg);
         flex-direction: column;
         align-items: center;
         padding: 20px 0;
         gap: 16px;
-        border-bottom: 1px solid #1a1a1a;
+        border-bottom: 1px solid var(--warna-garis);
     }
 
     .nav-links.show {
@@ -544,20 +597,24 @@ section {
         justify-content: center;
     }
 
-    .hero-avatar,
-    .about-avatar {
+    .avatar-img {
         width: 200px;
         height: 200px;
     }
 
     /* About mobile */
     .about-content {
-        flex-direction: column;
         text-align: center;
     }
 
     .about-stats {
-        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    /* Daftar mobile */
+    .about-lists {
+        grid-template-columns: 1fr;
     }
 
     /* Skills mobile */

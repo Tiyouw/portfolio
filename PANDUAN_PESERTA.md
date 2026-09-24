@@ -1,122 +1,212 @@
 # 📖 PANDUAN PESERTA — Bikin Portfolio Online Kamu
 
-Ikuti langkah-langkah di bawah ini dengan urutan. Semua dilakukan di browser,
-tidak perlu install aplikasi apa pun.
+Ikuti urutan di bawah. Semua dilakukan di browser, **tidak perlu install aplikasi apa pun**.
 
-> ⏱️ Estimasi waktu: 30–45 menit
+> ⏱️ Estimasi: 60–75 menit (termasuk daftar GitHub + publish)
 
 ---
 
-## Langkah 1 — Bikin Akun GitHub (5 menit)
+## PERSIAPAN (dilakukan SEBELUM hari praktik)
 
+### Daftar Akun GitHub
 1. Buka **https://github.com/signup**
-2. Isi email, password, dan username.
-   - ⚠️ **Username penting!** Nanti jadi bagian dari URL portfoliomu:
-     `username.github.io/portfolio`
-   - Pilih username yang rapi, contoh: `budi setiawan` → `budisetiawan24`
-3. Verifikasi email (cek inbox, klik tombol verify).
+2. Isi email, password, username.
+   - ⚠️ **Username jadi bagian URL portfoliomu:** `username.github.io/portfolio`
+   - Pilih yang rapi, contoh: `budi setiawan` → `budisetiawan24`
+3. Verifikasi email (buka inbox, klik tombol verify).
+4. Sudah punya akun? Lanjut ke Praktik 0.
+
+> Kenapa duluan? Proses daftar + verifikasi email bisa makan 10–15 menit dan bikin
+> sesi praktik habis cuma buat nunggu. Selesaikan di rumah.
 
 ---
 
-## Langkah 2 — Duplikat Repo Template (2 menit)
+## PRAKTIK 0 — Ambil Template (2 menit)
 
-1. Buka repo template: **https://github.com/Tiyouw/portfolio**
+1. Buka **https://github.com/Tiyouw/portfolio**
 2. Klik tombol hijau **"Use this template"** → **"Create a new repository"**
 3. Isi:
-   - Repository name: `portfolio` (WAJIB nama ini, biar URL konsisten)
-   - Visibility: **Public** (wajib public biar GitHub Pages gratis)
+   - Repository name: `portfolio` (WAJIB `portfolio` biar URL-nya rapi)
+   - Visibility: **Public** (wajib, biar bisa publish gratis)
 4. Klik **"Create repository from template"**
 
-Sekarang kamu punya salinan repo sendiri di akunmu. 🎉
+Sekarang kamu punya salinan sendiri. 🎉
+
+**Cara edit file:**
+1. Klik nama file (`index.html` atau `css/style.css`)
+2. Klik ikon **pensil ✏️** (kanan atas — "Edit this file")
+3. Ubah isinya, lalu scroll bawah → klik **"Commit changes"** (ini = tombol simpan)
+
+> ⚠️ Edit tidak akan tersimpan kalau lupa klik **Commit changes**.
 
 ---
 
-## Langkah 3 — Edit Kode di Browser (20 menit)
+## PRAKTIK 1 — Identitas Utama (15 menit) · file `index.html`
 
-### 3a. Buka file untuk diedit
-1. Di repo kamu, klik file **`index.html`**
-2. Klik ikon **pensil ✏️** (pojok kanan atas, tulisan "Edit this file")
-3. Edit isinya (lihat daftar di bawah)
-4. Setelah selesai, scroll ke bawah → tulis pesan commit singkat,
-   contoh: `ganti nama jadi Budi` → klik **"Commit changes"**
+### 1a. Ganti nama
+Cari tulisan `Nama Kamu`. Ada **2 tempat**:
+- di bagian `hero` (nama besar)
+- di bagian `footer` (paling bawah)
 
-### 3b. Yang wajib kamu ganti di `index.html`
+Ganti keduanya dengan nama kamu.
 
-| Cari teks ini | Ganti dengan |
+### 1b. Ganti status/peran
+Cari `Frontend Developer` → ganti misal `Siswa RPL` atau `Pelajar`.
+
+### 1c. Ganti deskripsi diri
+Cari tag `<p>` di bagian `hero-desc` — paragraf pembuka. Ganti dengan cerita singkatmu.
+
+Di bagian `about` juga ada 2 tag `<p>` (biodata). Ganti juga.
+
+### 1d. Ganti foto profil
+1. Siapkan foto kamu, ubah nama file jadi **`profil.jpg`** (huruf kecil semua).
+2. Di repo, buka folder **`assets`**.
+3. Klik **"Add file" → "Upload files"**, upload `profil.jpg` kamu.
+4. Karena namanya sama, GitHub akan menimpa file placeholder lama.
+
+Foto otomatis muncul di bagian hero. Kalau foto tidak muncul, hard refresh (Ctrl+F5).
+
+---
+
+## PRAKTIK 2 — Daftar Hobi / Prestasi / Cita-cita (10 menit) · file `index.html`
+
+Di bagian `about` ada 3 kotak daftar. Daftar di HTML ditulis dengan:
+
+```html
+<ul class="list">
+    <li>Bermain game</li>
+    <li>Membaca komik</li>
+</ul>
+```
+
+- `<ul>` = **ul**iste = wadah daftar
+- `<li>` = **l**ist **i**tem = satu isi daftar
+
+### Tugas
+1. Ganti isi tiap `<li>` dengan hobi/prestasi/cita-citamu sendiri.
+2. Mau **menambah** item? Copy satu baris `<li>...</li>`, tempel di bawahnya, ganti isinya.
+3. Mau **menghapus** item? Hapus seluruh baris `<li>...</li>`.
+
+Contoh hasil:
+```html
+<div class="list-block">
+    <h4>🎯 Hobi</h4>
+    <ul class="list">
+        <li>Futsal</li>
+        <li>Main gitar</li>
+        <li>Ngoding santai</li>
+    </ul>
+</div>
+```
+
+---
+
+## PRAKTIK 3 — Warna Tema (12 menit) · file `css/style.css`
+
+Buka folder **`css`** → klik **`style.css`**.
+
+Di baris paling atas ada daftar warna bernama `:root`:
+
+```css
+:root {
+    --warna-utama: #00d4ff;        /* warna aksen (tombol, judul kecil) */
+    --warna-utama-hover: #00b8e6;  /* warna aksen saat kursor di atasnya */
+    --warna-bg: #0a0a0a;           /* background halaman */
+    --warna-bg-alt: #0e0e0e;       /* background section selang-seling */
+    --warna-kartu: #111111;        /* background kartu */
+    --warna-garis: #1a1a1a;        /* garis pembatas */
+    --warna-judul: #ffffff;        /* warna judul */
+    --warna-teks: #e0e0e0;         /* warna tulisan utama */
+    --warna-teks-redup: #888888;   /* tulisan sekunder */
+}
+```
+
+### Tugas
+Ganti kode warna (`#00d4ff` dsb). Satu baris diubah → **seluruh website** ikut berubah.
+
+**Pilihan warna siap pakai:**
+| Warna | Hex |
 |---|---|
-| `Nama Kamu` | Nama lengkap kamu (muncul 2x: di Hero dan Footer) |
-| `Frontend Developer` | Role kamu, contoh: `Siswa RPL` |
-| `Halo, nama saya` | Boleh dibiarkan atau ganti sapaan lain |
-| `Siswa SMK yang suka bikin website...` | Deskripsi singkat kamu |
-| `email@kamu.com` | Email kamu (di bagian Contact) |
-| `https://instagram.com/` | Link Instagram kamu |
-| Persentase skill (`90%`, `80%`, dst.) | Skill kamu yang asli |
-| Nama proyek (`Landing Page`, `To-Do List App`, dst.) | Proyek kamu sendiri |
+| Merah | `#ff6b6b` |
+| Kuning | `#ffd93d` |
+| Hijau | `#6bff8d` |
+| Ungu | `#b36bff` |
+| Pink | `#ff6bd6` |
+| Biru tua | `#1a365d` |
 
-### 3c. Edit tampilan di `css/style.css`
+**Contoh tema terang (pagi):**
+```css
+--warna-bg: #f5f5f5;
+--warna-bg-alt: #ffffff;
+--warna-kartu: #ffffff;
+--warna-garis: #dddddd;
+--warna-judul: #111111;
+--warna-teks: #222222;
+--warna-teks-redup: #666666;
+```
 
-1. Buka folder **`css`** → klik **`style.css`** → ikon pensil ✏️
-2. Hal seru yang bisa diubah:
-   - **Warna aksen**: cari semua `#00d4ff` (warna cyan), ganti dengan warna lain.
-     Pilihan warna: `#ff6b6b` (merah), `#ffd93d` (kuning), `#6bff8d` (hijau),
-     `#b36bff` (ungu), `#ff6bd6` (pink)
-   - **Background**: cari `#0a0a0a` (hitam pekat) → ganti `#1a1a2e` (biru gelap) atau `#0f0f0f`
-   - **Font besar nama**: cari `.hero-name` → ubah `font-size`
-
-### 3d. Ganti foto (opsional)
-
-1. Di halaman utama repo kamu, klik **"Add file" → "Upload files"**
-2. Drag & drop foto kamu (contoh: `foto.jpg`) — WAJIB nama file `foto.jpg`
-3. Commit.
-4. Edit `index.html`, cari bagian `hero-avatar`, ganti isinya jadi:
-   ```html
-   <img src="foto.jpg" alt="Foto saya" class="avatar-img">
-   ```
-5. Edit `css/style.css`, tambahkan di paling bawah:
-   ```css
-   .avatar-img {
-       width: 100%;
-       height: 100%;
-       object-fit: cover;
-       border-radius: 20px;
-   }
-   ```
+> Mau ubah warna navbar saja? Cari komentar `✏️ PRAKTIK 3` di `.navbar`,
+> ubah baris `background-color: rgba(10, 10, 10, 0.95);`
+> (angka `0.95` = tingkat transparansi, dari `0` tembus pandang sampai `1` pekat).
 
 ---
 
-## Langkah 4 — Deploy ke GitHub Pages (2 menit)
+## PRAKTIK 4 — Tipografi (10 menit) · file `css/style.css`
 
-1. Di repo kamu, klik tab **"Settings"** (menu atas repo)
-2. Menu kiri → **"Pages"** (bagian Code and automation)
+1. **Jenis huruf** — cari komentar `✏️ PRAKTIK 4` di bagian `body`:
+   ```css
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   ```
+   Ganti dengan misal: `Arial, sans-serif` atau `'Times New Roman', serif`.
+
+2. **Ukuran judul nama** — cari `.hero-name`, ubah `font-size: 3.5rem;`
+   (`rem` = satuan ukuran; makin besar angkanya makin besar tulisannya).
+
+3. **Kontras tulisan** — kalau tulisan susah dibaca, atur ulang `--warna-teks`
+   dan `--warna-bg` supaya beda terang/gelapnya jelas.
+
+---
+
+## PRAKTIK 5 — Publish ke Internet (5 menit)
+
+1. Di repo kamu, klik tab **"Settings"**
+2. Menu kiri → **"Pages"**
 3. Bagian **"Build and deployment"**:
    - Source: **"Deploy from a branch"**
-   - Branch: pilih **`main`** → folder **`/ (root)`** → klik **Save**
+   - Branch: **`main`** → folder **`/ (root)`** → klik **Save**
 4. Tunggu 1–3 menit, refresh halaman.
-5. 🎉 URL portfoliomu muncul di atas:
+5. 🎉 URL portfoliomu muncul:
    **`https://username-kamu.github.io/portfolio/`**
+
+Buka di HP juga — tampilannya otomatis menyesuaikan.
+
+### Kalau muncul 404
+- Tunggu 2–3 menit lagi (build belum selesai), refresh
+- Pastikan repo **Public**, bukan Private
+- Pastikan branch terpilih `main`, bukan `master`
 
 ---
 
-## Langkah 5 — Cek Hasil
+## PRAKTIK 6 — Hias Proyek (tugas tambahan, kalau selesai duluan)
 
-Buka URL kamu di browser (bisa juga di HP).
+Di bagian `portfolio` ada 3 kartu proyek. Setiap kartu punya:
+- `<h3>` = judul proyek
+- `<p>` = deskripsi
+- `<span class="tag">` = label teknologi
+- emoji di `<span class="project-placeholder">` = gambar sementara
 
-Kalau muncul error 404:
-- Tunggu 2–3 menit lagi (build belum selesai), refresh
-- Pastikan repo **Public**, bukan Private
-- Pastikan branch yang dipilih `main`, bukan `master`
+**Tugas:**
+1. Ganti judul & deskripsi dengan proyekmu sendiri.
+2. Ganti emoji placeholder jadi emoji lain (contoh: 🔥 🚀 💡 🎨 🎧 🎵).
+3. Ganti link `Live Demo` dan `GitHub` (`href="#"` → link asli).
+4. Skill di bagian Skills: ubah angka `style="width: 90%"` dan teks `90%`.
 
 ---
 
 ## 🏆 Selesai!
 
-Portfoliomu sekarang online dan bisa dibagikan ke siapa saja lewat link.
-Setiap kali kamu edit kode di GitHub dan commit, website otomatis update.
-
-**Tugas tambahan (kalau sudah selesai duluan):**
-- Ganti semua warna jadi tema favoritmu
-- Tambah 1 skill card baru di bagian Skills (copy-paste blok `skill-card`)
-- Tambah 1 proyek baru di bagian Portfolio (copy-paste blok `project-card`)
-- Ganti emoji placeholder proyek jadi emoji lain
+Portfoliomu online dan bisa dibagikan lewat link.
+Setiap kali kamu edit file dan klik **Commit changes**, website otomatis update
+(dalam 1–3 menit).
 
 Ada kendala? Angkat tangan, panggil pembimbing. 🙋
