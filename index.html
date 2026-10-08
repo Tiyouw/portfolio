@@ -202,7 +202,8 @@
                 <!-- Project Card 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <span class="project-placeholder">🖥️</span>
+                        <!-- ✏️ GANTI GAMBAR: taruh file bernama proyek-1.jpg di folder assets -->
+                        <img src="assets/proyek-1.jpg" alt="Screenshot proyek 1">
                     </div>
                     <div class="project-info">
                         <h3>Landing Page</h3>
@@ -220,7 +221,8 @@
                 <!-- Project Card 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <span class="project-placeholder">📝</span>
+                        <!-- ✏️ GANTI GAMBAR: taruh file bernama proyek-2.jpg di folder assets -->
+                        <img src="assets/proyek-2.jpg" alt="Screenshot proyek 2">
                     </div>
                     <div class="project-info">
                         <h3>To-Do List App</h3>
@@ -239,7 +241,8 @@
                 <!-- Project Card 3 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <span class="project-placeholder">🎮</span>
+                        <!-- ✏️ GANTI GAMBAR: taruh file bernama proyek-3.jpg di folder assets -->
+                        <img src="assets/proyek-3.jpg" alt="Screenshot proyek 3">
                     </div>
                     <div class="project-info">
                         <h3>Game Ular</h3>
@@ -279,7 +282,8 @@
                 <!-- Kartu Prestasi 1 — ✏️ GANTI: nama lomba, tahun, tingkat -->
                 <div class="project-card">
                     <div class="project-image">
-                        <span class="project-placeholder">🥇</span>
+                        <!-- ✏️ GANTI GAMBAR: taruh file bernama prestasi-1.jpg di folder assets -->
+                        <img src="assets/prestasi-1.jpg" alt="Foto prestasi 1">
                     </div>
                     <div class="project-info">
                         <h3>Juara 1 Lomba Desain Web</h3>
@@ -295,7 +299,8 @@
                 <!-- Kartu Prestasi 2 — ✏️ GANTI -->
                 <div class="project-card">
                     <div class="project-image">
-                        <span class="project-placeholder">🥈</span>
+                        <!-- ✏️ GANTI GAMBAR: taruh file bernama prestasi-2.jpg di folder assets -->
+                        <img src="assets/prestasi-2.jpg" alt="Foto prestasi 2">
                     </div>
                     <div class="project-info">
                         <h3>Juara 2 Olimpiade Informatika</h3>
@@ -311,7 +316,8 @@
                 <!-- Kartu Prestasi 3 — ✏️ GANTI -->
                 <div class="project-card">
                     <div class="project-image">
-                        <span class="project-placeholder">🏅</span>
+                        <!-- ✏️ GANTI GAMBAR: taruh file bernama prestasi-3.jpg di folder assets -->
+                        <img src="assets/prestasi-3.jpg" alt="Foto prestasi 3">
                     </div>
                     <div class="project-info">
                         <h3>Finalis Kompetisi Robotik</h3>
@@ -398,6 +404,17 @@
                 link.classList.remove('active');
                 if (link.getAttribute('href') === '#' + current) {
                     link.classList.add('active');
+                }
+            });
+        });
+
+        // Gambar kartu: kalau file .jpg belum ada di folder assets,
+        // tampilkan gambar placeholder (.svg) supaya tidak muncul ikon rusak.
+        document.querySelectorAll('.project-image img').forEach(gambar => {
+            gambar.addEventListener('error', () => {
+                const src = gambar.getAttribute('src') || '';
+                if (src.endsWith('.jpg')) {
+                    gambar.setAttribute('src', src.replace(/\.jpg$/, '.svg'));
                 }
             });
         });

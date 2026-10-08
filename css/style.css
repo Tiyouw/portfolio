@@ -444,10 +444,15 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-.project-placeholder {
-    font-size: 3.5rem;
+/* Gambar di dalam kartu (proyek & prestasi) — memenuhi kotak tanpa gepeng */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .project-info {

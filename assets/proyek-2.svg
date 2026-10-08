@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Gambar placeholder proyek 2">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a1a1a"/>
+      <stop offset="1" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="4" fill="#00d4ff"/>
+  <rect y="496" width="800" height="4" fill="#00d4ff"/>
+  <circle cx="400" cy="175" r="70" fill="none" stroke="#00d4ff" stroke-width="4"/>
+  <text x="400" y="198" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="54" font-weight="700" fill="#00d4ff">&lt;/&gt;</text>
+  <text x="400" y="305" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="38" font-weight="700" fill="#e0e0e0">FOTO PROYEK 2</text>
+  <text x="400" y="350" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="22" fill="#888888">ganti dengan screenshot karyamu</text>
+</svg>

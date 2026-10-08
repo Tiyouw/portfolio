@@ -14,7 +14,9 @@ portfolio/
 ├── css/
 │   └── style.css       # Semua styling (warna dikumpulkan di blok :root)
 ├── assets/
-│   └── profil.jpg      # Foto profil placeholder — timpa dengan fotomu
+│   ├── profil.jpg      # Foto profil placeholder — timpa dengan fotomu
+│   ├── proyek-1..3.svg # Placeholder gambar kartu proyek (dipakai kalau .jpg belum ada)
+│   └── prestasi-1..3.svg # Placeholder gambar kartu prestasi
 ├── PANDUAN_PESERTA.md  # Langkah-langkah untuk peserta (PR + Praktik 0–6, 2B opsional)
 ├── PANDUAN_MENTOR.md   # Panduan pembimbing + timeline + troubleshooting
 └── README.md
@@ -42,6 +44,7 @@ Detail lengkap: lihat **`PANDUAN_PESERTA.md`**.
 |---|---|
 | Nama, peran, deskripsi | `index.html` — komentar `✏️ GANTI` / `✏️ PRAKTIK 1` |
 | Foto profil | Timpa file `assets/profil.jpg` (nama harus persis) |
+| Gambar kartu proyek/prestasi | Taruh `proyek-1..3.jpg` / `prestasi-1..3.jpg` di `assets/` — **tanpa edit HTML** |
 | Daftar hobi/prestasi/cita-cita | `index.html` — blok `<ul class="list">` |
 | Kartu prestasi lomba | `index.html` — section `id="prestasi"` (opsional, bisa dihapus) |
 | Semua warna website | `css/style.css` — blok `:root` paling atas |
@@ -53,6 +56,9 @@ Detail lengkap: lihat **`PANDUAN_PESERTA.md`**.
   seluruh web ikut berubah
 - **Responsive** — tampil bagus di HP dan desktop
 - **6 section** — Home, About, Skills, Portfolio, Prestasi (opsional), Contact
+- **Gambar kartu tinggal timpa file** — taruh `proyek-1.jpg` di `assets/`, kartu
+  proyek 1 langsung berganti. Belum diisi? Otomatis pakai gambar placeholder
+  (SVG) — tidak pernah muncul ikon gambar rusak
 - **Vanilla JavaScript** — hamburger menu & highlight navbar saat scroll
 - **Well-commented** — penanda `✏️ PRAKTIK n` biar peserta gampang nyari
 

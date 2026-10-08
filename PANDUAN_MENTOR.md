@@ -65,7 +65,8 @@ Kirim ke grup kelas / dibacakan saat ekstrakurikuler, paling lambat H-3:
 - [ ] Daftar akun GitHub + verifikasi email (**pakai Gmail pribadi**, cek spam)
 - [ ] Install **Git** (git-scm.com) dan **VS Code** (code.visualstudio.com)
 - [ ] Install 3 extension: **Live Server, Color Highlight, Auto Rename Tag**
-- [ ] Siapkan foto profil, dinamai `profil.jpg`
+- [ ] Siapkan foto, dinamai persis: `profil.jpg` (wajib) + opsional
+      `proyek-1..3.jpg` dan `prestasi-1..3.jpg` untuk gambar kartu
 - [ ] (Disarankan) coba sendiri langkah Praktik 0 dari `PANDUAN_PESERTA.md`
 
 PR ini adalah **penghemat waktu terbesar**: daftar akun + install + verifikasi
@@ -74,6 +75,8 @@ bisa memakan 30–45 menit per siswa — tidak muat di sesi 60 menit.
 ### Checklist panitia — internal
 
 - [ ] Repo template https://github.com/Tiyouw/portfolio — status Public + template
+- [ ] Folder `assets/` berisi: `profil.jpg` + 6 SVG placeholder
+      (`proyek-1..3.svg`, `prestasi-1..3.svg`) — jangan sampai terhapus
 - [ ] Cek akses `tiyouw.github.io/portfolio` (demo) dari jaringan sekolah.
       Kalau diblokir, siapkan screenshot offline
 - [ ] Siapkan hotspot cadangan (panitia)
@@ -101,7 +104,7 @@ Rundown resmi (Lampiran 1 proposal):
 | Jam | Durasi | Praktik di panduan | Output siswa |
 |---|---|---|---|
 | 10.37–10.45 | 8 m | **Praktik 0** — Use this template + clone + git config + Go Live | Repo sendiri, file terbuka di VS Code, Live Server jalan |
-| 10.45–11.00 | 15 m | **Praktik 1** — nama, peran, deskripsi, foto, **commit+push pertama** | Identitas terganti, perubahan masuk GitHub |
+| 10.45–11.00 | 15 m | **Praktik 1** — nama, peran, deskripsi, foto profil, **commit+push pertama**. (Praktik 1B — ganti gambar kartu — opsional, tawarkan ke siswa yang cepat) | Identitas terganti, perubahan masuk GitHub |
 | 11.00–11.10 | 10 m | **Praktik 2** — `<ul>/<li>` hobi, prestasi, cita-cita (+ trik Emmet). Section **Prestasi** (2B) = opsional, tidak masuk alur wajib | Daftar pribadi |
 | 11.10–11.22 | 12 m | **Praktik 3** — warna via `:root` + Color Picker | Tema warna pilihan sendiri |
 | 11.22–11.32 | 10 m | **Praktik 4** — `font-family`, `font-size`, kontras | Tipografi khas |
@@ -125,6 +128,20 @@ Aturan pendamping:
   di navbar — kalau tidak, klik menunya tidak mengarah ke mana-mana.
 - Inilah tempat pertama siswa mempraktikkan **copy-paste blok HTML** (menambah
   atau mengurangi kartu) — bagus untuk mengajarkan struktur berulang.
+
+### Gambar pada kartu (Praktik 1B)
+
+Baik kartu Portfolio maupun Prestasi memakai `<img src="assets/xxx.jpg">`.
+Selama file `.jpg` belum ada, JS fallback menampilkan `assets/xxx.svg`
+(placeholder bertuliskan "FOTO PROYEK 1", dst.) supaya **tidak ada ikon rusak**.
+
+Poin yang perlu ditekankan ke pendamping:
+- Ganti gambar = **timpa file** di folder `assets`, **tidak perlu edit HTML**.
+  Nama file harus persis (`proyek-1.jpg`, `prestasi-2.jpg`, dst., huruf kecil).
+- Ini analogi bagus untuk "HTML menunjuk lokasi file, bukan menyimpan gambar".
+- Ingatkan ukuran file < 1 MB (kuota GitHub Pages & kecepatan lab).
+- Bagian ini menghemat waktu: siswa yang belum punya screenshot proyek tidak
+  perlu apa-apa — placeholder sudah rapi sejak awal.
 
 ### Pembagian peran pendamping saat praktik
 
@@ -173,6 +190,9 @@ ke akun pribadi kalau nanti berhasil daftar.
 | Popup auth GitHub tidak terbuka | Popup diblokir / komputer lab terkunci | Login via browser, salin kode perangkat (VS Code menawarkan opsi ini) |
 | Commit gagal "Please tell me who you are" | `git config` belum diisi | Jalankan 2 perintah `git config --global` di Praktik 0c |
 | Foto tidak muncul | Nama file tidak persis `profil.jpg` (mis. `Foto.JPG`, `profil (1).jpg`) | Rename persis, huruf kecil semua |
+| Kartu proyek/prestasi masih placeholder | File `.jpg` belum ada di folder `assets` | Normal & bukan error. Taruh `proyek-1.jpg` dst. di `assets/` |
+| Gambar kartu jadi ikon rusak (▯) | File ada tapi salah folder / nama salah | Cek: harus di dalam `assets/`, nama persis, huruf kecil |
+| Gambar kartu tidak ganti-ganti walau sudah di-push | Cache browser | Hard refresh `Ctrl+F5`; tunggu build Pages 1–3 menit |
 | CSS tidak berubah | Edit file salah / belum save / cache | Cek judul tab editor (titik = belum save); hard refresh `Ctrl+F5` di Live Server |
 | "Go Live" tidak ada | Extension Live Server belum terinstall | Install dulu, restart VS Code |
 | 404 di URL Pages | Build belum selesai / branch salah / repo Private | Tunggu 3 menit; Settings → Pages harus `main` + `/ (root)`; cek visibility |
@@ -200,6 +220,7 @@ ke akun pribadi kalau nanti berhasil daftar.
 | `index.html` | Halaman utama — konten yang diedit siswa |
 | `css/style.css` | Styling — warna di `:root`, tipografi beranotasi |
 | `assets/profil.jpg` | Foto placeholder — ditimpa foto siswa |
+| `assets/proyek-1..3.svg`, `assets/prestasi-1..3.svg` | Gambar placeholder kartu — otomatis dipakai kalau `.jpg` belum ada. **Jangan dihapus.** |
 | `PANDUAN_PESERTA.md` | Langkah demi langkah siswa (PR + Praktik 0–6) |
 | `PANDUAN_MENTOR.md` | File ini |
 | `README.md` | Deskripsi repo publik |

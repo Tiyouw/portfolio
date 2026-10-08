@@ -30,10 +30,17 @@ Selesaikan di rumah, butuh ~30 menit.
       1. **Live Server** — biar lihat hasil website langsung tiap kali save
       2. **Color Highlight** — kode warna langsung tampil sebagai blok warna
       3. **Auto Rename Tag** — mencegah error saat ganti tag HTML
-- [ ] **5. Siapkan foto profil** — foto bagus, simpan di laptop, beri nama `profil.jpg`
+- [ ] **5. Siapkan foto** — simpan di laptop, beri nama **persis** seperti tabel ini:
 
-> 📌 File yang perlu kamu siapkan **hanya `profil.jpg`**. Kartu Portfolio &
-> Prestasi diisi pakai tulisan (tidak butuh upload gambar).
+| Nama file | Dipakai untuk | Wajib? |
+|---|---|---|
+| `profil.jpg` | Foto profil di halaman Home | ✅ Wajib |
+| `proyek-1.jpg`, `proyek-2.jpg`, `proyek-3.jpg` | Gambar kartu proyek (Portfolio) | Opsional |
+| `prestasi-1.jpg`, `prestasi-2.jpg`, `prestasi-3.jpg` | Gambar kartu prestasi (Prestasi) | Opsional |
+
+> 📌 Yang **wajib cuma `profil.jpg`**. Kartu Portfolio & Prestasi sudah punya
+> gambar placeholder bawaan — kalau belum diganti, tampilannya tetap rapi
+> (tidak muncul ikon rusak). Cara menggantinya ada di **Praktik 1B**.
 
 ---
 
@@ -118,6 +125,51 @@ di sana. Setiap selesai satu praktik, ulangi langkah ini (commit + push).
 
 ---
 
+## PRAKTIK 1B (OPSIONAL) — Ganti Gambar Kartu
+
+Kartu **Portfolio** (proyek) dan **Prestasi** punya kotak gambar di atasnya.
+Sekarang kotaknya masih berisi *gambar placeholder* (tulisan "FOTO PROYEK 1", dst).
+
+### Cara menggantinya: cuma TIMPA FILE. Tidak perlu edit HTML sama sekali.
+
+1. Siapkan gambarmu, beri nama **persis** salah satu nama ini:
+   - `proyek-1.jpg` → mengisi kartu proyek 1
+   - `proyek-2.jpg` → kartu proyek 2
+   - `proyek-3.jpg` → kartu proyek 3
+   - `prestasi-1.jpg` → kartu prestasi 1
+   - `prestasi-2.jpg` → kartu prestasi 2
+   - `prestasi-3.jpg` → kartu prestasi 3
+2. **Taruh file itu di folder `assets`** (satu folder dengan `profil.jpg`).
+3. Lihat jendela **Live Server** — gambar placeholder otomatis berganti jadi
+   fotomu. Tidak muncul? Cek lagi penulisan namanya (huruf kecil semua,
+   akhiran `.jpg`).
+
+> 🤔 **Kok bisa otomatis?** Di `index.html` sudah tertulis
+> `<img src="assets/proyek-1.jpg" alt="Screenshot proyek 1">`. Artinya HTML
+> meminta file bernama `proyek-1.jpg`. Selama file itu belum ada, JavaScript
+> menampilkan gambar placeholder sebagai gantinya. Begitu file ada, langsung
+> tampil. **Ini contoh nyata: HTML hanya menunjuk lokasi file, bukan
+> menyalin gambarnya.**
+
+### Ukuran & format
+- Simpan sebagai **`.jpg`** (kalau fotomu `.png`, ubah dulu, atau ganti tulisan
+  `.jpg` jadi `.png` di `index.html`).
+- Usahakan **di bawah 1 MB** biar websitemu cepat dibuka.
+- Ukuran bebas — CSS otomatis memotong rapi (`object-fit: cover`), jadi gambar
+  tidak akan gepeng walau bentuknya beda-beda.
+
+### Kalau gambar tidak muncul
+| Gejala | Penyebab | Fix |
+|---|---|---|
+| Masih tampil gambar placeholder | Nama file tidak persis | Ulangi: harus `proyek-1.jpg`, huruf kecil, akhiran `.jpg` |
+| Muncul ikon gambar rusak (▯) | File salah folder | File harus ada **di dalam** folder `assets`, bukan di luar |
+| Gambar lama masih muncul | Belum di-push / cache browser | Commit + push, lalu hard refresh `Ctrl+F5` |
+| Gambar gepeng/ketarik | Normal, tidak apa-apa | `object-fit: cover` memotong rapi. Mau ubah? Ganti jadi `contain` di `style.css` |
+
+Jangan lupa **commit + push** setelah selesai.
+
+---
+
 ## PRAKTIK 2 — Daftar Hobi / Prestasi / Cita-cita (10 menit) · file `index.html`
 
 Di bagian `about` ada 3 kotak daftar. Daftar di HTML ditulis dengan:
@@ -158,8 +210,8 @@ Strukturnya **sama persis** dengan kartu Portfolio:
 - `<h3>` = nama lomba / kegiatan
 - `<p>` = penjelasan singkat (tingkat, penyelenggara, tahun)
 - `<span class="tag">` = label kecil (peringkat / tahun / tingkat)
-- emoji di `<span class="project-placeholder">` = ikon sementara
-  (contoh: 🥇 🥈 🥉 🏅 📜 🎖️)
+- gambar di `<img src="assets/prestasi-1.jpg">` = foto sertifikat/piala
+  (cara gantinya: **Praktik 1B** — tinggal timpa file)
 
 ### Tugas (kalau ada prestasi)
 1. Ganti nama lomba, penjelasan, dan label di tiap kartu dengan punyamu.
@@ -273,11 +325,12 @@ Di bagian `portfolio` ada 3 kartu proyek. Setiap kartu punya:
 - `<h3>` = judul proyek
 - `<p>` = deskripsi
 - `<span class="tag">` = label teknologi
-- emoji di `<span class="project-placeholder">` = gambar sementara
+- gambar di `<img src="assets/proyek-1.jpg">` = screenshot karyamu
 
 **Tugas:**
 1. Ganti judul & deskripsi dengan proyek/karya kamu sendiri.
-2. Ganti emoji placeholder jadi emoji lain (contoh: 🔥 🚀 💡 🎨 🎧 🎵).
+2. Ganti gambarnya — taruh `proyek-1.jpg`, `proyek-2.jpg`, `proyek-3.jpg`
+   di folder `assets` (lihat **Praktik 1B**).
 3. Ubah persentase skill di bagian Skills: `style="width: 90%"` dan teks `90%`.
 4. Coba tambah 1 kartu skill baru: copy blok `<div class="skill-card">...</div>`
    satu kali, tempel di bawahnya, ganti isinya.
