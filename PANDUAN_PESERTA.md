@@ -32,6 +32,9 @@ Selesaikan di rumah, butuh ~30 menit.
       3. **Auto Rename Tag** — mencegah error saat ganti tag HTML
 - [ ] **5. Siapkan foto profil** — foto bagus, simpan di laptop, beri nama `profil.jpg`
 
+> 📌 File yang perlu kamu siapkan **hanya `profil.jpg`**. Kartu Portfolio &
+> Prestasi diisi pakai tulisan (tidak butuh upload gambar).
+
 ---
 
 ## PRAKTIK 0 — Ambil Template ke Komputer (8 menit)
@@ -138,6 +141,35 @@ Di bagian `about` ada 3 kotak daftar. Daftar di HTML ditulis dengan:
 ### 💡 Trik: Auto Rename Tag
 Coba klik tag `<h4>` di salah satu judul daftar, ganti jadi `<h3>` — tag
 penutupnya ikut berganti otomatis. Ini gunanya extension Auto Rename Tag.
+
+Jangan lupa **commit + push** setelah selesai.
+
+---
+
+## PRAKTIK 2B (OPSIONAL) — Section Prestasi · file `index.html`
+
+Template sudah punya section **Prestasi** (posisinya di bawah Portfolio, di atas
+Contact) berisi 3 kartu prestasi. Bagian ini **opsional** — kalau kamu belum
+punya prestasi, lewati saja.
+
+### Cara mengisi kartu prestasi
+Strukturnya **sama persis** dengan kartu Portfolio:
+
+- `<h3>` = nama lomba / kegiatan
+- `<p>` = penjelasan singkat (tingkat, penyelenggara, tahun)
+- `<span class="tag">` = label kecil (peringkat / tahun / tingkat)
+- emoji di `<span class="project-placeholder">` = ikon sementara
+  (contoh: 🥇 🥈 🥉 🏅 📜 🎖️)
+
+### Tugas (kalau ada prestasi)
+1. Ganti nama lomba, penjelasan, dan label di tiap kartu dengan punyamu.
+2. Kartu kelebihan? Hapus satu blok `<div class="project-card">...</div>`.
+   Kurang? Copy satu blok penuh lalu tempel di bawahnya.
+
+### ⚠️ Kalau kamu TIDAK punya prestasi
+Hapus **dua** hal ini (kalau hanya hapus salah satu, menunya jadi error):
+1. Seluruh section `<section id="prestasi" class="prestasi"> ... </section>`
+2. Baris link navbar: `<li><a href="#prestasi" class="nav-link">Prestasi</a></li>`
 
 Jangan lupa **commit + push** setelah selesai.
 

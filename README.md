@@ -10,12 +10,12 @@ URL website portofolio sendiri.
 
 ```
 portfolio/
-├── index.html          # Halaman utama (Home, About, Skills, Portfolio, Contact)
+├── index.html          # Halaman utama (Home, About, Skills, Portfolio, Prestasi, Contact)
 ├── css/
 │   └── style.css       # Semua styling (warna dikumpulkan di blok :root)
 ├── assets/
 │   └── profil.jpg      # Foto profil placeholder — timpa dengan fotomu
-├── PANDUAN_PESERTA.md  # Langkah-langkah untuk peserta (PR + Praktik 0–6)
+├── PANDUAN_PESERTA.md  # Langkah-langkah untuk peserta (PR + Praktik 0–6, 2B opsional)
 ├── PANDUAN_MENTOR.md   # Panduan pembimbing + timeline + troubleshooting
 └── README.md
 ```
@@ -43,6 +43,7 @@ Detail lengkap: lihat **`PANDUAN_PESERTA.md`**.
 | Nama, peran, deskripsi | `index.html` — komentar `✏️ GANTI` / `✏️ PRAKTIK 1` |
 | Foto profil | Timpa file `assets/profil.jpg` (nama harus persis) |
 | Daftar hobi/prestasi/cita-cita | `index.html` — blok `<ul class="list">` |
+| Kartu prestasi lomba | `index.html` — section `id="prestasi"` (opsional, bisa dihapus) |
 | Semua warna website | `css/style.css` — blok `:root` paling atas |
 | Jenis & ukuran huruf | `css/style.css` — komentar `✏️ PRAKTIK 4` |
 
@@ -51,7 +52,7 @@ Detail lengkap: lihat **`PANDUAN_PESERTA.md`**.
 - **Dark theme** modern, blok warna (`:root`) gampang diganti — ubah 1 baris,
   seluruh web ikut berubah
 - **Responsive** — tampil bagus di HP dan desktop
-- **5 section** — Home, About, Skills, Portfolio, Contact
+- **6 section** — Home, About, Skills, Portfolio, Prestasi (opsional), Contact
 - **Vanilla JavaScript** — hamburger menu & highlight navbar saat scroll
 - **Well-commented** — penanda `✏️ PRAKTIK n` biar peserta gampang nyari
 

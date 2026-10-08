@@ -487,6 +487,13 @@ section {
     gap: 12px;
 }
 
+/* ===== PRESTASI (opsional, PRAKTIK 2B) ===== */
+/* Pakai warna latar bawaan supaya selang-seling dengan Portfolio di atasnya
+   (Portfolio = --warna-bg-alt, Prestasi = --warna-bg). */
+.prestasi {
+    background: var(--warna-bg);
+}
+
 /* ===== CONTACT ===== */
 .contact-form {
     max-width: 600px;

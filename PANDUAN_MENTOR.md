@@ -102,7 +102,7 @@ Rundown resmi (Lampiran 1 proposal):
 |---|---|---|---|
 | 10.37–10.45 | 8 m | **Praktik 0** — Use this template + clone + git config + Go Live | Repo sendiri, file terbuka di VS Code, Live Server jalan |
 | 10.45–11.00 | 15 m | **Praktik 1** — nama, peran, deskripsi, foto, **commit+push pertama** | Identitas terganti, perubahan masuk GitHub |
-| 11.00–11.10 | 10 m | **Praktik 2** — `<ul>/<li>` hobi, prestasi, cita-cita (+ trik Emmet) | Daftar pribadi |
+| 11.00–11.10 | 10 m | **Praktik 2** — `<ul>/<li>` hobi, prestasi, cita-cita (+ trik Emmet). Section **Prestasi** (2B) = opsional, tidak masuk alur wajib | Daftar pribadi |
 | 11.10–11.22 | 12 m | **Praktik 3** — warna via `:root` + Color Picker | Tema warna pilihan sendiri |
 | 11.22–11.32 | 10 m | **Praktik 4** — `font-family`, `font-size`, kontras | Tipografi khas |
 | 11.32–11.37 | 5 m | **Praktik 5** — push terakhir + **aktifkan GitHub Pages** | URL `username.github.io/portfolio` dibuat |
@@ -111,6 +111,20 @@ Rundown resmi (Lampiran 1 proposal):
 
 **Aturan emas: sebelum 11.50 semua URL harus sudah hidup.** Praktik 6 tidak
 pernah boleh mengalahkan Praktik 5.
+
+### Section Prestasi (Praktik 2B) — opsional
+
+Template punya section **Prestasi** sendiri (di bawah Portfolio) berisi 3 kartu,
+strukturnya identik dengan kartu Portfolio (`.project-card`). Ini menjawab
+permintaan ketua pelaksana agar siswa bisa menampilkan prestasi lomba.
+
+Aturan pendamping:
+- **Jangan jadikan wajib.** Tidak semua siswa punya prestasi. Cukup tawarkan
+  saat siswa selesai Praktik 2 atau di buffer.
+- **Kalau siswa hapus section-nya, ingatkan hapus juga** link `<li>Prestasi</li>`
+  di navbar — kalau tidak, klik menunya tidak mengarah ke mana-mana.
+- Inilah tempat pertama siswa mempraktikkan **copy-paste blok HTML** (menambah
+  atau mengurangi kartu) — bagus untuk mengajarkan struktur berulang.
 
 ### Pembagian peran pendamping saat praktik
 
