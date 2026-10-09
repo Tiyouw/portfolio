@@ -269,7 +269,8 @@
          <span class="tag"> = peringkat / tahun / tingkat.
 
          Kalau kamu belum punya prestasi, hapus seluruh section ini
-         DAN hapus <li>Prestasi</li> di navbar paling atas.
+         DAN hapus baris <li><a href="#prestasi" class="nav-link">Prestasi</a></li>
+         di navbar paling atas.
          ========================================================= -->
 
     <!-- ===== PRESTASI ===== -->
@@ -411,12 +412,19 @@
         // Gambar kartu: kalau file .jpg belum ada di folder assets,
         // tampilkan gambar placeholder (.svg) supaya tidak muncul ikon rusak.
         document.querySelectorAll('.project-image img').forEach(gambar => {
-            gambar.addEventListener('error', () => {
+            const pasangPlaceholder = () => {
                 const src = gambar.getAttribute('src') || '';
                 if (src.endsWith('.jpg')) {
                     gambar.setAttribute('src', src.replace(/\.jpg$/, '.svg'));
                 }
-            });
+            };
+            // Kalau gambarnya SUDAH gagal sebelum kode ini jalan, error-nya
+            // sudah lewat (tidak akan tertangkap listener). Cek langsung.
+            if (gambar.complete && gambar.naturalWidth === 0) {
+                pasangPlaceholder();
+            } else {
+                gambar.addEventListener('error', pasangPlaceholder);
+            }
         });
     </script>
 

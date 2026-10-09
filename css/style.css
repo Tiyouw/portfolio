@@ -200,6 +200,7 @@ body {
     cursor: pointer;
     transition: all 0.3s;
     border: none;
+    color: var(--warna-teks); /* warna teks bawaan tombol */
 }
 
 .btn-primary {
